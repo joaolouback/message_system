@@ -6,6 +6,28 @@
   list-style: none;
 }
 
+.message-image {
+  margin-top: 0.5rem;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.reactions {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.reactions button {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+
+
 /* Cada item de mensagem */
 .message-item {
   background-color: #ffffff;

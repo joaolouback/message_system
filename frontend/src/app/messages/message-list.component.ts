@@ -12,6 +12,13 @@ import { MessageService, Message } from './message.services';
   styleUrls: ['./message-list.component.css']
 })
 export class MessageListComponent implements OnInit, OnDestroy {
+  
+darkMode: any;
+userId: any;
+  messageService: any;
+mensagensFiltradas(): any {
+throw new Error('Method not implemented.');
+}
   public baseUrl = 'http://localhost:3000';
 
   messages: Message[] = [];
@@ -59,4 +66,17 @@ export class MessageListComponent implements OnInit, OnDestroy {
       });
     }
   }
+
+  
+  reagir(messageId: string, emoji: string) {
+    this.msgSvc.reagirMensagem(messageId, emoji).subscribe((res: { reactions: any }) => {
+      const msg = this.messages.find(m => m._id === messageId);
+      if (msg) {
+        msg.reactions = res.reactions;
+      }
+    });
+  }
+  
+  
+  
 }

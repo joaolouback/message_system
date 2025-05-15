@@ -10,6 +10,8 @@ export interface Author {
   avatarUrl?: string;
 }
 export interface Message {
+reactions: any;
+imagePath: any;
   _id: string;
   content: string;
   author: Author;
@@ -18,6 +20,11 @@ export interface Message {
 
 @Injectable({ providedIn: 'root' })
 export class MessageService {
+  
+  apiUrl: any;
+  postMessage(formData: FormData) {
+    throw new Error('Method not implemented.');
+  }
   private host = 'http://localhost:3000';
   private refreshNeeded = new Subject<void>();
 
@@ -74,4 +81,14 @@ export class MessageService {
       tap(() => this.refreshNeeded.next())
     );
   }
+
+  reagirMensagem(id: string, emoji: string) {
+    return this.http.post<{ reactions: any }>(
+      `${this.apiUrl}/messages/${id}/react`,
+      { emoji }
+    );
+  }
+  
+  
+  
 }

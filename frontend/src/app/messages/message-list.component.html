@@ -1,8 +1,18 @@
 <ul class="message-list">
   <li class="message-item" *ngFor="let m of messages">
+    
     <div class="message-content">
       {{ m.content }}
+      <img *ngIf="m.imagePath" [src]="baseUrl + m.imagePath" class="message-image" alt="Imagem da mensagem" />
     </div>
+
+    <div class="reactions">
+      <button (click)="reagir(m._id, '👍')">👍 {{ m.reactions?.['👍'] || 0 }}</button>
+      <button (click)="reagir(m._id, '❤️')">❤️ {{ m.reactions?.['❤️'] || 0 }}</button>
+      <button (click)="reagir(m._id, '😂')">😂 {{ m.reactions?.['😂'] || 0 }}</button>
+    </div>
+    
+    
 
     <div class="message-meta">
       <!-- Avatar real -->
@@ -28,5 +38,6 @@
         🗑️ Apagar
       </button>
     </div>
+
   </li>
 </ul>
