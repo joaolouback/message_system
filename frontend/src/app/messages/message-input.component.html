@@ -1,0 +1,24 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" class="message-form">
+  <label for="content" class="form-label">Sua mensagem</label>
+  <textarea
+    id="content"
+    name="content"
+    ngModel
+    placeholder="Escreva algo inspirador..."
+    class="form-control"
+    rows="4"
+    required
+  ></textarea>
+
+  <p *ngIf="!auth.getCurrentUser()" class="warning-text">
+    Você precisa estar logado para enviar mensagens.
+  </p>
+
+  <button
+    type="submit"
+    class="btn-submit"
+    [disabled]="f.invalid || !auth.getCurrentUser()"
+  >
+    Enviar Mensagem
+  </button>
+</form>

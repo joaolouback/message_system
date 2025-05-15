@@ -1,0 +1,16 @@
+.nav-link {
+  background-color: white;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-link:hover {
+  background-color: rgb(223, 223, 223);
+  color: black;
+  text-decoration: none;
+}
+.nav-link.active {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}

@@ -1,0 +1,57 @@
+<br>
+<div class="signup-card">
+  <h2>Crie sua Conta</h2>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="firstName">Seu nome</label>
+      <input type="text" id="firstName" placeholder="Insira o seu nome" class="form-control" formControlName="firstNameTS">
+      <div *ngIf="myForm.get('firstNameTS')?.errors?.['required'] && myForm.get('firstNameTS')?.touched">
+        <p class="error-text">Nome é obrigatório.</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Seu sobrenome</label>
+      <input type="text" id="lastName" placeholder="Insira o seu sobrenome" class="form-control" formControlName="lastNameTS">
+      <div *ngIf="myForm.get('lastNameTS')?.errors?.['required'] && myForm.get('lastNameTS')?.touched">
+        <p class="error-text">Sobrenome é obrigatório.</p>
+      </div>
+      <div *ngIf="myForm.get('lastNameTS')?.errors?.['minlength'] && myForm.get('lastNameTS')?.touched">
+        <p class="error-text">Mínimo de 4 caracteres.</p>
+      </div>
+      <div *ngIf="myForm.get('lastNameTS')?.errors?.['maxlength'] && myForm.get('lastNameTS')?.touched">
+        <p class="error-text">Máximo de 16 caracteres.</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Seu e-mail</label>
+      <input type="email" id="email" placeholder="exemplo123@email.com" class="form-control" formControlName="emailTS">
+      <div *ngIf="myForm.get('emailTS')?.errors?.['required'] && myForm.get('emailTS')?.touched">
+        <p class="error-text">E-mail é obrigatório.</p>
+      </div>
+      <div *ngIf="myForm.get('emailTS')?.errors?.['pattern'] && myForm.get('emailTS')?.touched">
+        <p class="error-text">Formato de e-mail inválido.</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Crie uma senha</label>
+      <input type="password" id="password" placeholder="******" class="form-control" formControlName="passwordTS">
+      <div *ngIf="myForm.get('passwordTS')?.errors?.['required'] && myForm.get('passwordTS')?.touched">
+        <p class="error-text">Senha é obrigatória.</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="avatar">Escolha seu avatar</label>
+      <input type="file" id="avatar" class="form-control" (change)="onFileSelected($event)" accept="image/*">
+      <div *ngIf="myForm.get('avatarUrl')?.errors?.['pattern'] && myForm.get('avatarUrl')?.touched">
+        <p class="error-text">URL de avatar inválida.</p>
+      </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="!myForm.valid">Finalizar Cadastro</button>
+  </form>
+</div>
