@@ -17,7 +17,7 @@ module.exports = (req, res, next) => {
     try {
         /* Verificação do token e extração do payload */
         const payload = jwt.verify(token, process.env.JWT_SECRET);
-        req.userId = payload.id;
+        req.userData = { userId: payload.id };
         /* Chamada ao próximo middleware ou rota */
         next();
     } catch {

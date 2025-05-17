@@ -1,60 +1,93 @@
-.signup-card {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+body {
+  background: linear-gradient(to right, #f8f9fb, #eef4f7);
   font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-h2 {
-  color: #4f46e5;
-  margin-bottom: 1rem;
+.signup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.signup-card {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  padding: 3rem 2rem;
+  width: 100%;
+  max-width: 420px;
   text-align: center;
 }
 
-label {
-  font-weight: 500;
-  margin-bottom: 0.25rem;
-  display: block;
+h2 {
+  font-size: 1.75rem;
+  color: #1d1d1d;
+  margin-bottom: 0.5rem;
+}
+
+.subtext {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.input-icon {
+  display: flex;
+  align-items: center;
+  background: #f4f6f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+}
+
+.input-icon .icon {
+  margin-right: 0.75rem;
+  font-size: 1.1rem;
+  color: #6c757d;
+}
+
+.input-icon input[type="text"],
+.input-icon input[type="email"],
+.input-icon input[type="password"],
+.input-icon input[type="file"] {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-size: 1rem;
   color: #333;
 }
 
-input.form-control {
-  width: 100%;
-  padding: 0.75rem;
-  margin-bottom: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-.error-text {
-  color: red;
-  font-size: 0.875rem;
-  margin-top: -0.5rem;
-  margin-bottom: 0.75rem;
+.input-icon input::file-selector-button {
+  display: none;
 }
 
 .btn-primary {
-  background-color: #49d350;
-  border: none;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 500;
   width: 100%;
-  margin-top: 1rem;
-  transition: background-color 0.3s;
+  padding: 0.9rem;
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: #49d350;
+  background-color: #43a047;
 }
 
 .btn-primary:disabled {
-  background-color: #3ca341;
+  background-color: #a5d6a7;
   cursor: not-allowed;
 }
+

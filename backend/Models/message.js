@@ -1,3 +1,5 @@
+
+
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
@@ -10,7 +12,7 @@ const messageSchema = new Schema({
   // 👇 CAMPO DE REAÇÕES
   reactions: {
     type: Map,
-    of: Number,
+    of: Object,
     default: {}
   }
 });

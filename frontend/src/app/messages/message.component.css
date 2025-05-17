@@ -1,57 +1,73 @@
 .message-container {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 12px;
-  margin-bottom: 12px;
-  background-color: #f9f9f9;
-  color: #333;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
 }
+
 .message-container:hover {
-  background-color: #333;
-  color: #f9f9f9;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
+
 .message-content {
   font-size: 1rem;
-  line-height: 1.4;
-  margin-bottom: 8px;
+  line-height: 1.6;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  white-space: pre-line;
 }
+
 .message-meta {
   display: flex;
   align-items: center;
   font-size: 0.875rem;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
+
 .meta-avatar {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  margin-right: 12px;
-  border: 1px solid #ccc;
+  object-fit: cover;
+  border: 2px solid #d1d5db;
 }
+
 .meta-user {
-  margin-right: 12px;
-  font-weight: bold;
+  font-weight: 600;
+  color: #111827;
 }
+
 .meta-date {
-  margin-right: auto;
   font-style: italic;
-  color: inherit;
+  color: #6b7280;
+  margin-right: auto;
 }
+
+/* Botões de ação */
 .meta-btn {
-  background: none;
+  background: transparent;
   border: none;
   cursor: pointer;
-  padding: 4px 8px;
-  margin-left: 8px;
-  border-radius: 4px;
-  transition: background-color 0.2s;
-  color: inherit;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+  color: #4f46e5;
 }
+
 .edit-btn:hover {
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(99, 102, 241, 0.1);
 }
+
+.delete-btn {
+  color: #dc2626;
+}
+
 .delete-btn:hover {
-  background-color: rgba(255,0,0,0.1);
+  background-color: rgba(220, 38, 38, 0.1);
 }

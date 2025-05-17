@@ -6,18 +6,27 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
     standalone: true,
     imports: [RouterOutlet, RouterLink, RouterLinkActive],
     template: `
-                <header class="row spacing">
-                    <nav class="col-md-8 col-md-offset-2">
-                        <ul class="nav nav-tabs">
-                            <li><a class="nav-link"
-                            routerLinkActive="active" [routerLink]="['signup']">Cadastro</a></li>
-                            <li><a class="nav-link"
-                                    routerLinkActive="active" [routerLink]="['signin']">Login</a></li>
-                        </ul>
-                    </nav>
-                </header>
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <a
+                    class="nav-link"
+                    routerLink="/autenticacao/signup"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }">
+                    Cadastro
+                    </a>
+
+                    <a
+                    class="nav-link"
+                    routerLink="/autenticacao/signin"
+                    routerLinkActive="active">
+                    Login
+                    </a>
+                </div>
 
                 <router-outlet></router-outlet>
+            </div>
+
     `,
     styleUrls: ['./authentication.component.css']
 })

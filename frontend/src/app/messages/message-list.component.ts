@@ -16,6 +16,7 @@ export class MessageListComponent implements OnInit, OnDestroy {
 darkMode: any;
 userId: any;
   messageService: any;
+m: any;
 mensagensFiltradas(): any {
 throw new Error('Method not implemented.');
 }
@@ -67,15 +68,35 @@ throw new Error('Method not implemented.');
     }
   }
 
+  getReactionCount(reactions: any, emoji: string): number {
+    if (!reactions || typeof reactions !== 'object') return 0;
+    const data = reactions[emoji];
+    if (!data || typeof data !== 'object') return 0;
+    return Object.keys(data).length;
+  }
+  
   
   reagir(messageId: string, emoji: string) {
-    this.msgSvc.reagirMensagem(messageId, emoji).subscribe((res: { reactions: any }) => {
-      const msg = this.messages.find(m => m._id === messageId);
-      if (msg) {
-        msg.reactions = res.reactions;
+    this.msgSvc.reagirMensagem(messageId, emoji).subscribe({
+      next: (res: { reactions: any }) => {
+        console.log('NOVA REAÇÃO:', res.reactions);
+        const i = this.messages.findIndex(m => m._id === messageId);
+        if (i !== -1) {
+          this.messages[i] = {
+            ...this.messages[i],
+            reactions: res.reactions
+          };
+        }
+      },
+      error: err => {
+        console.error(`Erro ao reagir à mensagem ${messageId}`, err);
       }
     });
   }
+  
+  
+  
+  
   
   
   

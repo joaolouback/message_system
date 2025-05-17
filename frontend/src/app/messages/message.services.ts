@@ -82,12 +82,16 @@ export class MessageService {
     );
   }
 
+  
   reagirMensagem(id: string, emoji: string) {
     return this.http.post<{ reactions: any }>(
-      `${this.apiUrl}/messages/${id}/react`,
-      { emoji }
+      `${this.host}/messages/${id}/react`,
+      { emoji },
+      { headers: this.headers }
     );
   }
+  
+  
   
   
   
