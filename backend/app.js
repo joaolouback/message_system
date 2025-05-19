@@ -19,7 +19,7 @@ const app = express();
 /* Conecta ao MongoDB usando Mongoose */
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/MyMongoDB')
-  .then(() => console.log('MongoDB conectado.'))
+  .then(() => console.log('Conexão com o MongoDB realizada com sucesso.'))
   .catch(err => console.error('Erro na conexão:', err));
 
 /* Configura o motor de visualização (Handlebars) */
