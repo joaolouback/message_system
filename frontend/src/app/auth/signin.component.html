@@ -1,0 +1,42 @@
+<br>
+<div class="signin-card">
+  <h2>Entrar na Plataforma</h2>
+  <form [formGroup]="myFormIn" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="email">Seu e-mail</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="exemplo123@email.com"
+        class="form-control"
+        formControlName="emailTS"
+      />
+      @if (myFormIn.get('emailTS')?.errors?.['required'] && myFormIn.get('emailTS')?.touched) {
+        <p class="error-text">E-mail é obrigatório.</p>
+      }
+      @if (myFormIn.get('emailTS')?.errors?.['pattern'] && myFormIn.get('emailTS')?.touched) {
+        <p class="error-text">Formato de e-mail inválido.</p>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="pass">Sua senha</label>
+      <input
+        type="password"
+        id="pass"
+        placeholder="******"
+        class="form-control"
+        formControlName="passwordTS"
+      />
+      @if (myFormIn.get('passwordTS')?.errors?.['required'] && myFormIn.get('passwordTS')?.touched) {
+        <p class="error-text">Senha é obrigatória.</p>
+      }
+      @if (myFormIn.get('passwordTS')?.errors?.['minlength'] && myFormIn.get('passwordTS')?.touched) {
+        <p class="error-text">Mínimo de 4 caracteres.</p>
+      }
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="!myFormIn.valid">Acessar</button>
+  </form>
+</div>

@@ -1,0 +1,57 @@
+.message-container {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  background-color: #f9f9f9;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+.message-container:hover {
+  background-color: #333;
+  color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.message-content {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+.message-meta {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+}
+.meta-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 12px;
+  border: 1px solid #ccc;
+}
+.meta-user {
+  margin-right: 12px;
+  font-weight: bold;
+}
+.meta-date {
+  margin-right: auto;
+  font-style: italic;
+  color: inherit;
+}
+.meta-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  margin-left: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  color: inherit;
+}
+.edit-btn:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+.delete-btn:hover {
+  background-color: rgba(255,0,0,0.1);
+}

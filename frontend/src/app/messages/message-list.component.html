@@ -1,0 +1,32 @@
+<ul class="message-list">
+  <li class="message-item" *ngFor="let m of messages">
+    <div class="message-content">
+      {{ m.content }}
+    </div>
+
+    <div class="message-meta">
+      <!-- Avatar real -->
+      <img *ngIf="m.author.avatarUrl; else placeholder" [src]="baseUrl + m.author.avatarUrl"
+        alt="Avatar de {{ m.author.username }}" class="avatar" />
+
+      <!-- Avatar genérico -->
+      <ng-template #placeholder>
+        <img src="assets/default-user.png" alt="Avatar padrão" class="avatar" />
+      </ng-template>
+
+      <strong class="username">{{ m.author.username }}</strong>
+
+      <small class="timestamp">
+        {{ m.createdAt | date:'short' }}
+      </small>
+
+      <button class="action-btn" (click)="editMessage(m)">
+        ✏️ Editar
+      </button>
+
+      <button class="action-btn danger" (click)="deleteMessage(m._id)">
+        🗑️ Apagar
+      </button>
+    </div>
+  </li>
+</ul>

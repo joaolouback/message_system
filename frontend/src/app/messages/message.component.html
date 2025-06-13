@@ -1,0 +1,17 @@
+<div class="message-container">
+  <div class="message-content">
+    {{ message.content }}
+  </div>
+  <br>
+  <div class="message-meta">
+    <img
+      [src]="message.author.avatarUrl"
+      alt="avatar"
+      class="meta-avatar"
+    />
+    <span class="meta-user">{{ message.author.username }}</span>
+    <span class="meta-date">{{ message.createdAt | date:'short' }}</span>
+    <button class="meta-btn edit-btn" (click)="onEdit()">Editar</button>
+    <button class="meta-btn delete-btn" (click)="onDelete()">Excluir</button>
+  </div>
+</div>
