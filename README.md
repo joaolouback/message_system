@@ -6,21 +6,19 @@ Este projeto foi desenvolvido como parte prática da disciplina **Desenvolviment
 
 - ✅ Cadastro de mensagens  
 - ✅ Visualização de mensagens cadastradas  
-- ✅ Edição e exclusão de mensagens  
+- ✅ Edição, exclusão e reacão de mensagens  
 - ✅ Autenticação de usuários via JWT  
 - ✅ Integração com MongoDB para persistência dos dados  
 - ✅ Backend estruturado em Node.js com Express  
-- ✅ Frontend reativo utilizando Vue.js
 
 ## 🧱 Tecnologias Utilizadas
 
 ### Frontend
 
-- Vue.js
-- Vite
+- Angular
+- TypeScript
 - JavaScript moderno (ES6+)
 - HTML5 e CSS3
-- Axios para requisições HTTP
 
 ### Backend
 
@@ -43,7 +41,6 @@ Este projeto foi desenvolvido como parte prática da disciplina **Desenvolviment
 
 - Node.js instalado
 - MongoDB rodando localmente ou online (ex: MongoDB Atlas)
-- Vue CLI (ou Vite) instalado globalmente
 
 ### Clonando o Repositório
 
@@ -70,4 +67,8 @@ npm run dev
 ## 🔐 Autenticação JWT
 
 A aplicação conta com um sistema de autenticação seguro baseado em JSON Web Token (JWT). O login retorna um token que é utilizado nas requisições protegidas, garantindo segurança e controle de acesso a rotas privadas.
+
+## 💬 Reações às Mensagens
+
+Além das funcionalidades básicas de mensagens, os usuários podem interagir com mensagens utilizando reações (como curtir ou amar). Essa funcionalidade enriquece a comunicação e oferece uma experiência mais dinâmica e interativa para os usuários.
 
