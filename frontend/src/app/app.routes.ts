@@ -6,7 +6,7 @@ import { authenticationComponent } from './auth/authentication.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AUTH_ROUTES } from './auth/auth.routers';
 import { SignupComponent } from './auth/signup.component';
-import { PreferencesComponent } from './preferences/preferences.component';
+
 import { AuthGuard } from './auth/auth.guard';    // importe o guard
 
 export const routes: Routes = [
@@ -36,12 +36,7 @@ export const routes: Routes = [
     ]
   },
 
-  // Preferências de usuário
-  {
-    path: 'preferences',
-    component: PreferencesComponent,
-    title: 'Preferências'
-  },
+ 
 
   // Página não encontrada
   {
