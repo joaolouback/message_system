@@ -6,7 +6,7 @@ Este projeto foi desenvolvido como parte prática da disciplina **Desenvolviment
 
 - ✅ Cadastro de mensagens  
 - ✅ Visualização de mensagens cadastradas  
-- ✅ Edição e exclusão de mensagens  
+- ✅ Edição, exclusão e reação de mensagens  
 - ✅ Autenticação de usuários via JWT  
 - ✅ Integração com MongoDB para persistência dos dados  
 - ✅ Backend estruturado em Node.js com Express  
@@ -70,4 +70,8 @@ npm run dev
 ## 🔐 Autenticação JWT
 
 A aplicação conta com um sistema de autenticação seguro baseado em JSON Web Token (JWT). O login retorna um token que é utilizado nas requisições protegidas, garantindo segurança e controle de acesso a rotas privadas.
+
+## 💬 Reações às Mensagens
+
+Além das funcionalidades básicas de mensagens, os usuários podem interagir com mensagens utilizando reações (como curtir ou amar). Essa funcionalidade enriquece a comunicação e oferece uma experiência mais dinâmica e interativa para os usuários.
 
