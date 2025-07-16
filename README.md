@@ -17,7 +17,6 @@ Este projeto foi desenvolvido como parte prática da disciplina **Desenvolviment
 ### Frontend
 
 - TypeScript
-- Vite
 - JavaScript moderno (ES6+)
 - HTML5 e CSS3
 - Angular
@@ -35,15 +34,14 @@ Este projeto foi desenvolvido como parte prática da disciplina **Desenvolviment
 
 - Versionamento com Git
 - Projeto hospedado no GitHub
-- MongoDB local (ou compatível com Atlas)
+- MongoDB local 
 
 ## 🚀 Como Executar o Projeto
 
 ### Pré-requisitos
 
 - Node.js instalado
-- MongoDB rodando localmente ou online (ex: MongoDB Atlas)
-- Vue CLI (ou Vite) instalado globalmente
+- MongoDB rodando localmente
 
 ### Clonando o Repositório
 
