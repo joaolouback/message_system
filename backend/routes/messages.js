@@ -3,13 +3,13 @@ const router = express.Router();
 const auth = require('../middleware/auth');
 const Message = require('../Models/message');
 
-// rota de listar mensagens, criar, editar, deletar...
+
 router.get('/', async (req, res) => {
   const messages = await Message.find().populate('author', 'username avatarUrl');
   res.json({ messages });
 });
 
-// rota de reações com emoji
+
 const mongoose = require('mongoose');
 
 router.post('/:id/react', auth, async (req, res) => {
@@ -28,7 +28,7 @@ router.post('/:id/react', auth, async (req, res) => {
     const msg = await Message.findById(req.params.id);
     if (!msg) return res.status(404).json({ error: 'Mensagem não encontrada' });
 
-    // Remover qualquer reação anterior do usuário
+   
     msg.reactions.forEach((value, key) => {
       if (value[userId]) {
         delete value[userId];
@@ -40,14 +40,13 @@ router.post('/:id/react', auth, async (req, res) => {
       }
     });
 
-    // Adicionar a nova reação
+   
     const current = msg.reactions.get(emoji) || {};
     current[userId] = true;
     msg.reactions.set(emoji, current);
 
     await msg.save();
 
-    // Retornar contagem por emoji
     const reactionCounts = {};
     msg.reactions.forEach((value, key) => {
       reactionCounts[key] = Object.keys(value).length;
@@ -63,7 +62,6 @@ router.post('/:id/react', auth, async (req, res) => {
 
 
 
-// rota para criar nova mensagem
 router.post('/', auth, async (req, res) => {
   console.log('REQ.USERDATA', req.userData);
   try {
@@ -136,4 +134,4 @@ router.delete('/:id', auth, async (req, res) => {
 });
 
 
-module.exports = router; // ✅ ESSENCIAL!
+module.exports = router; 
